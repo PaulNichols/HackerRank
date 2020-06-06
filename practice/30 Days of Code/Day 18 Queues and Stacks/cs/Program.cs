@@ -1,10 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 
 internal class Solution
 {
     //Write your code here
+    private Stack<char> stack;
+
+    private Queue<char> queue;
+
+    public Solution()
+    {
+        this.stack = new Stack<char>();
+        this.queue = new Queue<char>();
+    }
+
+    private char dequeueCharacter()
+    {
+        return this.queue.Dequeue();
+    }
+
+    private char popCharacter()
+    {
+        return this.stack.Pop();
+    }
+
+    private void pushCharacter(char c)
+    {
+        this.stack.Push(c);
+    }
+
+    private void enqueueCharacter(char c)
+    {
+        this.queue.Enqueue(c);
+    }
 
     private static void Main(String[] args)
     {
@@ -45,25 +73,5 @@ internal class Solution
         {
             Console.Write("The word, {0}, is not a palindrome.", s);
         }
-    }
-
-    private object dequeueCharacter()
-    {
-        throw new NotImplementedException();
-    }
-
-    private object popCharacter()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void pushCharacter(char c)
-    {
-        throw new NotImplementedException();
-    }
-
-    private void enqueueCharacter(char c)
-    {
-        throw new NotImplementedException();
     }
 }
