@@ -19,7 +19,7 @@ def repeatedString(s, n):
     while len(new) < n:
         new += s
 
-    c = Counter(new[:10])
+    c = Counter(new[:n])
     k = c['a']
     return k
 
